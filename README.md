@@ -36,36 +36,39 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini di komputer lokal And
 git clone [https://github.com/rifqiram/Uts-RekomendasiPelatihan.git](https://github.com/rifqiram/Uts-RekomendasiPelatihan.git)
 cd Uts-RekomendasiPelatihan
 
-### 2. Install Dependensi PHP
-Sebelum menjalankan aplikasi, Anda perlu mengunduh semua library dan *package* pendukung framework Laravel yang tercantum di file `composer.json`.
-* Buka terminal atau command prompt di dalam folder proyek.
-* Pastikan komputer Anda sudah terinstal **Composer**.
-* Jalankan perintah instalasi 
-composer install
-agar folder `vendor/` otomatis terbuat.
+2. Install Dependensi PHP
+Sebelum menjalankan aplikasi, Anda perlu mengunduh semua library dan package pendukung framework Laravel yang tercantum di file composer.json.
 
-### 3. Setup Environment (Konfigurasi Lingkungan)
+*Pastikan komputer Anda sudah terinstal Composer.
+*Jalankan perintah instalasi agar folder vendor/ otomatis terbuat.
+
+composer install
+
+3. Setup Environment (Konfigurasi Lingkungan)
 Langkah ini diperlukan untuk membuat file konfigurasi utama aplikasi dan menghubungkannya ke database lokal Anda.
-1. Duplikat atau salin file `.env.example` yang ada di folder utama proyek, lalu ubah namanya menjadi `.env`.
-2. Buka file `.env` tersebut menggunakan text editor (seperti VS Code).
-3. Cari bagian konfigurasi database dan sesuaikan dengan nama database di MySQL Anda (misalnya `DB_DATABASE=uts_rekomendasi_pelatihan`).
-4. Generate kunci keamanan aplikasi yang baru agar sesi login dan enkripsi berjalan dengan aman.
+
+*Duplikat atau salin file .env.example yang ada di folder utama proyek, lalu ubah namanya menjadi .env.
+*Buka file .env tersebut menggunakan text editor (seperti VS Code).
+*Cari bagian konfigurasi database dan sesuaikan dengan nama database di MySQL Anda (misalnya DB_DATABASE=uts_rekomendasi_pelatihan).
+*Jalankan perintah berikut untuk meng-generate kunci keamanan aplikasi yang baru.
 
 cp .env.example .env
 php artisan key:generate
 
-### 4. Migrasi Database & Seeder
+4. Migrasi Database & Seeder
 Proses ini akan otomatis membuat struktur tabel database yang dibutuhkan oleh sistem tanpa perlu membuatnya manual satu per satu di phpMyAdmin.
-* Pastikan aplikasi database seperti XAMPP (MySQL) sudah dalam posisi *Start* / aktif.
-* Jalankan perintah migrasi untuk menyuntikkan skema tabel.
-* Jika ada data bawaan awal (seperti akun admin default atau data master), tambahkan perintah *seed* di bagian akhir perintah.
+
+*Pastikan aplikasi database seperti XAMPP (MySQL) sudah dalam posisi Start / aktif.
+*Jalankan perintah migrasi berikut untuk menyuntikkan skema tabel beserta data awal bawaan (seed).
 
 php artisan migrate --seed
 
-### 5. Jalankan Server Lokal
+5. Jalankan Server Lokal
 Langkah terakhir untuk menguji dan melihat hasil aplikasi di browser Anda.
-* Jalankan perintah untuk menyalakan server bawaan Laravel (*artisan serve*).
-* Buka browser favorit Anda (Chrome/Edge/Firefox).
-* Akses alamat lokal server yang muncul di terminal untuk mulai mencoba sistem manajemen pelatihan ini.
+
+*Jalankan perintah berikut untuk menyalakan server bawaan Laravel.
 
 php artisan serve
+
+📝 Lisensi
+Proyek ini bersifat open-source di bawah lisensi MIT.
